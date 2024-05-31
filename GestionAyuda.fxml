@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.JPUniversityController" spacing="10">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    <children>
+        <Label text="Registro de Ayudas para Estudiantes" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+        
+        <GridPane hgap="10" vgap="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <children>
+                <Label text="Código del Estudiante:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <TextField fx:id="codigoField" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                
+                <Label text="Nombre:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <TextField fx:id="nombreField" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                
+                <Label text="Tipo de Ayuda:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                <ComboBox fx:id="tipoAyudaComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                
+                <Button text="Asignar Ayuda" onAction="#handleAsignarAyuda" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.columnSpan="2" />
+            </children>
+        </GridPane>
+        
+        <ListView fx:id="ayudasListView" prefHeight="200" />
+        
+        <HBox spacing="10">
+            <children>
+                <Button text="Entregar Ayuda" onAction="#handleEntregarAyuda" />
+                <Button text="Rechazar Ayuda" onAction="#handleRechazarAyuda" />
+            </children>
+        </HBox>
+        
+        <HBox spacing="10">
+            <children>
+                <Label fx:id="entregadasLabel" text="Ayudas Entregadas: 0" />
+                <Label fx:id="rechazadasLabel" text="Ayudas Rechazadas: 0" />
+                <Label fx:id="asignadasLabel" text="Ayudas Asignadas: 0" />
+                <Label fx:id="estudiantesFavorecidosLabel" text="Estudiantes Favorecidos: 0" />
+            </children>
+        </HBox>
+    </children>
+</VBox>
+
